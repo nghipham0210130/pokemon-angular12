@@ -5,7 +5,7 @@ import { User } from '../../models/user';
   selector: 'navbar',
   template: `
     <nav>
-      <h4>Angular Vietnam v{{ version }}</h4>
+      <h4>Pokemon v{{ version }}</h4>
       <button *ngIf="isLoggedIn; else notLoggedIn" (click)="logOut()">
         I am {{ user?.name }}, and I like {{ user?.likes }} and dislike
         {{ user?.dislikes }} pokemons / Log Out
