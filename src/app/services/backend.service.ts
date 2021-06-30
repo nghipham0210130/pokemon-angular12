@@ -32,23 +32,29 @@ export class BackendService {
       );
   }
 
-  getPokemonDetail(id: string): Observable<SimplifiedPokemon> {
-    return this.httpClient
-      .get<SimplifiedPokemon>(`${this.baseUrl}/${id}`)
-      .pipe(
-        delay(1500), 
-        map((pokemon: PokemonDetail) => BackendService.getSimplifiedPokemon(pokemon))
-      );
-  }
+  // getPokemonDetail(id: string): Observable<SimplifiedPokemon> {
+  //   return this.httpClient
+  //     .get<SimplifiedPokemon>(`${this.baseUrl}/${id}`)
+  //     .pipe(
+  //       delay(1500), 
+  //       map((pokemon: PokemonDetail) => BackendService.getSimplifiedPokemon(pokemon))
+  //     );
+  // }
 
-  private static getSimplifiedPokemon(pokemon: PokemonDetail | null): SimplifiedPokemon {
-    return {
-      name: pokemon?.name || '',
-      ability: pokemon?.abilities?.find((ability) => !ability.is_hidden)?.ability?.name || '',
-      hiddenAbility: pokemon?.abilities?.find((ability) => ability.is_hidden)?.ability?.name || '',
-      image: pokemon?.sprites?.other?.['official-artwork']?.front_default || '',
-      stats: pokemon?.stats || [],
-      type: pokemon?.types[0].type?.name || '',
-    }
+  // private static getSimplifiedPokemon(pokemon: PokemonDetail | null): SimplifiedPokemon {
+  //   return {
+  //     name: pokemon?.name || '',
+  //     ability: pokemon?.abilities?.find((ability) => !ability.is_hidden)?.ability?.name || '',
+  //     hiddenAbility: pokemon?.abilities?.find((ability) => ability.is_hidden)?.ability?.name || '',
+  //     image: pokemon?.sprites?.other?.['official-artwork']?.front_default || '',
+  //     stats: pokemon?.stats || [],
+  //     type: pokemon?.types[0].type?.name || '',
+  //   }
+  // }
+
+  login(model: any) {
+    return model.pipe(
+      
+    )
   }
 }
