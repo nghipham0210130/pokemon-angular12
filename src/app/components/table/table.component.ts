@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Pokemon } from '../../models/pokemon';
-
+import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
+import { Pokemon } from "../../models/pokemon";
+ 
 @Component({
-  selector: 'data-table',
+  selector: "data-table",
   template: `
     <table [class.overlay]="isLoading">
       <thead>
@@ -29,21 +29,21 @@ import { Pokemon } from '../../models/pokemon';
         width: 100%;
         text-align: center;
       }
-
+ 
       .border-bottom {
         border-bottom: 1px solid;
       }
-
+ 
       .border-left {
         border-left: 1px solid;
       }
-
+ 
       .overlay {
         position: relative;
       }
-
+ 
       .overlay::before {
-        content: '';
+        content: "";
         position: absolute;
         width: 100%;
         height: 100%;
@@ -51,9 +51,9 @@ import { Pokemon } from '../../models/pokemon';
         top: 0;
         background-color: rgba(0, 0, 0, 0.3);
       }
-
+ 
       .overlay::after {
-        content: 'Loading...';
+        content: "Loading...";
         font-size: 2rem;
         font-weight: bold;
         position: absolute;
@@ -65,11 +65,12 @@ import { Pokemon } from '../../models/pokemon';
         align-items: center;
         justify-content: center;
       }
-    `
+    `,
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableComponent {
   @Input() isLoading = false;
-  @Input() data: Pokemon[] = [];
+  @Input() data: Pokemon[];
 }
+ 
